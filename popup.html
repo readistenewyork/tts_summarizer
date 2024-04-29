@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>My Chrome Extension</title>
+    
+		  <link href="./jquery-ui.min.css"  rel="stylesheet" type="text/css" media="screen">
+		<link href="./jquery-ui.structure.min.css"  rel="stylesheet" type="text/css" media="screen">
+		<link href="./jquery-luna.css"  rel="stylesheet" type="text/css" media="screen">
+		<link rel="stylesheet" href="popup.css" />
+	
+  </head>
+
+  <body>
+    <header>
+      <img src="header-logo.png" alt="logo" />
+    </header>
+
+    <main>
+      <div class="action-inputs">
+        <label for="upload-file">
+          <button id="upload-file-btn" class="animated">
+            <div class="svg-wrapper-1">
+              <div class="svg-wrapper">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  height="24"
+                >
+                  <path fill="none" d="M0 0h24v24H0z"></path>
+                  <path
+                    fill="currentColor"
+                    d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+            <span class="btn-text">Upload File</span>
+          </button>
+
+          <input
+            type="file"
+            accept=".pdf,.doc,.txt,.png,.jpg"
+            id="upload-file"
+          />
+        </label>
+      </div>
+
+      <hr id="hro"/>
+	  <div id="myPlayer" style="display:none">
+
+		</div> 
+
+      <div class="options">
+        <div class="pbuttn"><button type="button" id="pause-btn">Pause</button>
+
+        <button id="stop-btn">Stop</button>
+        <button id="options-toggle-btn">Options</button>
+		</div>
+        <div class="options__inputs">
+          <label for="voice">
+            <p>Voice</p>
+            <select id="voice">
+			<option value="0">Microsoft David - English (United States) (en-US)</option>
+			<option value="1">Microsoft Ravi - English (India) (en-IN)</option>
+			<option value="2">Microsoft Heera - English (India) (en-IN)</option>
+			<option value="3">Microsoft Mark - English (United States) (en-US)</option>
+			<option value="4">Microsoft Zira - English (United States) (en-US)</option>
+			</select>  
+           
+          </label>
+ <span id="prem"class="prem"><label for="dwn">
+            <p>Download Audio</p>
+            <input
+              type="checkbox"
+              id='dwn'
+            />
+          </label></span>
+          <label for="speed">
+            <p>Speed</p>
+            <input
+              type="range"
+              min="0"
+              max="2"
+              id="rate"
+              value="1"
+              step="0.1"
+            />
+          </label>
+
+          <label for="volume">
+            <p>Volume</p>
+            <input
+              type="range"
+              min="0"
+              max="1"
+              id="volume"
+              value="1"
+              step="0.1"
+            />
+          </label>
+
+          <label for="show-txt-checkbox">
+            <p>Show Summary</p>
+            <input type="checkbox" id="show-txt-checkbox" />
+          </label>
+		  <label for="bp-checkbox">
+		  <p>Background Player</p>
+          <input type="checkbox" id="bp-checkbox" />
+		
+	 
+		  </label>
+		  
+        </div>
+      </div>
+	  <hr id="h">
+       <p id="r">Current Status: <strong><span id="paidStatus">Unpaid</span></strong></p> 
+       <br>
+       <p id="r">Summarize: <strong>2x Shift Key</strong></p> 
+	  <span class="paid"><button type="button" class="btn btn-primary" style="display: none;" id="mng">Manage</button></span>
+	  <span id="paid"><a href="#"  >Buy Premium version</a><span>
+    </main>
+    <script src="./jquery.min.js">
+		</script>
+		<script src="./jquery-ui.min.js"></script>
+    <script src="bb.js"></script>
+	<script src="popup.js"></script>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+{
+  "manifest_version": 3,
+  "name": "Readisten Audio Summarizer",
+  "version": "0.1.2",
+  "description": "TTS Summarizer",
+  "icons": {
+    "16": "logo.png",
+    "32": "logo.png",
+    "48": "logo.png",
+    "128": "logo.png"
+  },
+  "minimum_chrome_version": "93",
+  "background": {
+    "service_worker":  "background.js"	
+  },
+  "action": {
+    "default_title": "Summary TTS",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "storage",
+    "tabs",
+	"downloads",
+	"activeTab",   "scripting",
+      "declarativeNetRequest",
+    "declarativeNetRequestFeedback" 
+
+  ],
+  "host_permissions": [
+    "*://*/"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "contentScript.js",
+        "components.js"
+      ],
+      "css": [
+        "components.css"
+      ]
+    }
+  ],"web_accessible_resources": [
+    {
+      "resources": ["audio/*"],
+      "matches": ["*://*/*"]
+    }
+  ]
+}

